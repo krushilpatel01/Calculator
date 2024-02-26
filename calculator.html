@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container {
+            width: 320px;
+            max-width: 501px;
+            margin: 20px auto;
+        }
+
+        .main-canvas {
+            background-color: #B7C9F2;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 30px;
+            padding: 0px 10px;
+        }
+
+        .box-input {
+            padding: 50px 0px;
+            background-color: rgba(248, 242, 242, 0.373);
+            text-align: center;
+            color: rgb(0, 0, 0);
+            text-indent: 10px;
+            initial-letter: left;
+        }
+
+        .btn {
+            width: 20%;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 5px auto;
+            box-shadow: 20px 0px 10px 10px rgba(245, 246, 246, 0.351) inset;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #B7C9F2;
+            box-shadow: none;
+            border: 1px solid black;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .btn:active {
+            background-color: #ffffff;
+        }
+
+        .btn-s {
+            width: 20%;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 5px auto;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+            border: none;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 1), #77baedcc);
+        }
+
+        .btn-s:hover {
+            background-color: #B7C9F2;
+            box-shadow: none;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .btn-s:focus {
+            background-color: #ffffff;
+        }
+
+        input {
+            text-indent: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas">
+        <div class="container">
+            <div class="heading">
+                <h3 class="text-center">Welcome to <span class="auto-type">calculater</span></h3>
+            </div>
+            <div class="main-canvas">
+                <div class="row text-center">
+                    <input type="text" id="box" class="col-12 box-input" disabled>
+                    <input type="text" id="box-output" class="col-12 box-input">
+                </div>
+                <div class="row text-center">
+                    <!-- <button id="insert" onclick="insertvalue('%')" class="btn-s col-3">%</button> -->
+                    <button id="insert" onclick="clearDisplay('ce')" class="col btn-s col-12">ce</button>
+                    <!-- <button id="insert" onclick="insertvalue('c')" class="btn-s col-3">c</button> -->
+                    <!-- <button id="insert" onclick="insertvalue(r)" class="btn-s col-3">r</button> -->
+                </div>
+                <!-- <div class="row text-center">
+                    <button id="symbol" onclick="insertsymbol('1/x')" class="btn-s col-3">1/x</button>
+                    <button id="symbol" onclick="insertsymbol('x2')" class="btn-s col-3">x2</button>
+                    <button id="symbol" onclick="insertsymbol('√a')" class="btn-s col-3">√a</button>
+                    <button id="symbol" onclick="insertsymbol('/')" class="btn-s col-3">/</button>
+                </div> -->
+                <div class="row text-center">
+                    <button id="insert" value="7" onclick="insertvalue('7')" class="btn col-3">7</button>
+                    <button id="insert" onclick="insertvalue('8')" class="btn col-3">8</button>
+                    <button id="insert" onclick="insertvalue('9')" class="btn col-3">9</button>
+                    <button id="insert" onclick="insertvalue('*')" class="btn-s col-3">x</button>
+                </div>
+                <div class="row text-center">
+                    <button id="insert" onclick="insertvalue('4')" class="btn col-3">4</button>
+                    <button id="insert" onclick="insertvalue('5')" class="btn col-3">5</button>
+                    <button id="insert" onclick="insertvalue('6')" class="btn col-3">6</button>
+                    <button id="insert" onclick="insertvalue('-')" class="btn-s col-3">-</button>
+                </div>
+                <div class="row text-center">
+                    <button id="insert" onclick="insertvalue('1')" class="btn col-3">1</button>
+                    <button id="insert" onclick="insertvalue('2')" class="btn col-3">2</button>
+                    <button id="insert" onclick="insertvalue('3')" class="btn col-3">3</button>
+                    <button id="insert" onclick="insertvalue('+')" class="btn-s col-3">+</button>
+                </div>
+                <div class="row text-center">
+                    <button id="insert" onclick="insertvalue('+/-')" class="btn col-3">+/-</button>
+                    <button id="insert" onclick="insertvalue('0')" class="btn col-3">0</button>
+                    <button id="insert" onclick="insertvalue('.')" class="btn col-3">.</button>
+                    <button id="insert" onclick="calculate('=')" class="btn-s col-3" value="=">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function insertvalue(value) {
+            document.getElementById('box').value += value;
+        }
+
+        function calculate() {
+            let expression = document.getElementById('box').value;
+            let result;
+            try {
+                result = eval(expression);
+            } catch (error) {
+                result = 'Error';
+            }
+            document.getElementById('box').value = result;
+        }
+
+        function clearDisplay() {
+            document.getElementById('box').value = '';
+        }
+    </script>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".auto-type", {
+            strings: ["calculator", "find your", "Solution"],
+            typespeed: 1000,
+            backspeed: 1000,
+            looped: true
+        })
+    </script>
+
+</body>
+
+</html>

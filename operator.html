@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator page</title>
+</head>
+
+<body>
+    <h1>operator page</h1>
+
+    <input type="number" name="n1" id="first-number">
+    <input type="number" name="n2" id="second-number">
+
+    <button type="button" onclick="plus()">+</button>
+    <button type="button" onclick="sub()">-</button>
+    <button type="button" onclick="mul()">*</button>
+    <button type="button" onclick="div()">/</button>
+
+    <p id="operation"></p>
+    <p id="object"></p>
+
+    <button type="button" onclick="Object_call()">object call</button>
+
+    <script src="main.js"></script>
+
+    <script>
+        // calculater code 
+        function plus() {
+            var x = document.getElementById('first-number').value;
+            var y = document.getElementById('second-number').value;
+            var number = x + y;
+
+            document.getElementById('operation').innerHTML = number;
+        }
+        function sub() {
+            var x = document.getElementById('first-number').value;
+            var y = document.getElementById('second-number').value;
+
+            document.getElementById('operation').innerHTML = x - y;
+        }
+        function mul() {
+            var x = document.getElementById('first-number').value;
+            var y = document.getElementById('second-number').value;
+
+            document.getElementById('operation').innerHTML = x * y;
+        }
+        function div() {
+            var x = document.getElementById('first-number').value;
+            var y = document.getElementById('second-number').value;
+
+            document.getElementById('operation').innerHTML = x / y;
+        }
+
+
+        // objects
+        function Object_call() {
+
+            const student = {
+                f_Name: "ck",
+                l_name: "patel",
+                age: 23,
+                color: "white"
+            };
+
+            document.getElementById('object').innerHTML = "name " + student.f_Name + student.l_name + " age " + student.age + " color " + student.color;
+        }
+
+    </script>
+</body>
+
+</html>

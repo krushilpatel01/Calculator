@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo-01">hello world</p>
+    <button onclick="myfunction()">try it</button>
+
+    <script>
+        // length get function
+        let text = "abcjncd";
+        let length = text.length;
+        console.log(length);
+
+        //<!-Extracting string characcters-> 
+        var text2 = "hello world";
+        var name = "krushil";
+        console.log(text2.charCodeAt(0));
+        // charAt() = use for print one character
+        // charCodeAt() = use for binary value print
+        // <!-- also you can use this line to get string character-->
+        // name.at(3);
+        // name[3];
+        console.log(name.at(2));
+        console.log(name[3]);
+
+        // <!-Extrecting string parts->
+        let fruit = "apple, bannana, mango";
+        let part = fruit.slice(-7, 19);
+        // you can use starting and end position of string(3 ,6)
+        // also you can use (-6) but it work opposite side
+        console.log(part);
+
+        let once = fruit.substring(-7, 19);
+        console.log(once);
+
+        let next = fruit.substr(-7, 19);
+        console.log(next);
+
+
+        function myfunction(){
+            let text01 =document.getElementById('demo-01').innerHTML;
+            document.getElementById('demo-01').console.log = text01.toUpperCase();
+        }
+    </script>
+
+
+</body>
+
+</html>

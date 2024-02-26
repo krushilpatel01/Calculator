@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>object page</h1>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        const cars = {
+            name: "audi",
+            model: 2022,
+            color: "black",
+            average: 60
+        };
+        // print car object value using line
+        document.getElementById("demo").innerHTML = "car name is : " + cars.name + " model= " + cars.model + " color= " + cars.color + " average speed= " + cars.average;
+
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+
+            // this is the method created
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+            // this keyword is use to get value 
+        };
+        document.getElementById("demo2").innerHTML = person.fullName();
+
+
+        let x = "john";
+        let y =new String("john");
+        document.getElementById("demo3").innerHTML = person.fullName();
+
+        // y value is object using new keyword
+
+    </script>
+</body>
+
+</html>
