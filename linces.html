@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-color: black;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1>welcome linces office</h1>
+    <select name="varification" id="Document">
+        <option value="adhar">
+            <button type="button">have a adhar card</button>
+        </option>
+        <option value="age">
+            <button type="button">age is 18+</button>
+        </option>
+        <option value="card">
+            <button type="button">hava a pancard</button>
+        </option>
+    </select>
+    <button type="button" onclick="checkfunction('value')">check now</button>
+</body>
+<script>
+
+    function checkfunction() {
+        let a = document.getElementById('Document').value;
+
+        if (a == "age" || a == "card") {
+            alert("you can do this");
+        }
+        else {
+            alert("you can't do this");
+        }
+    }
+
+    // function color(){
+    //     document.body.style.backgroundColor = "white";
+    // }
+</script>
+
+</html>

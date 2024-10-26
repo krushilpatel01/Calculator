@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Apk Using | Javascript</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="search-box">
+            <div class="search">
+                <input type="text" name="cityname" placeholder="Enter City Name" spellcheck="false">
+            </div>
+            <div class="search-icon">
+                <button><img src="images/search.png" alt="" srcset=""></button>
+            </div>
+        </div>
+        <div class="waether-information" id="weather">
+            <div class="weather-img">
+                <img src="images/cloudy.png" class="weather_img" alt="" srcset="">
+            </div>
+            <div class="weather-info">
+                <h1 class="temp">22°C</h1>
+                <h2 class="city">India</h2>
+            </div>
+            <div class="weatcher-cols">
+                <div class="humidity">
+                    <div class="h-img">
+                        <img src="images/humidity.png" alt="" srcset="">
+                    </div>
+                    <div class="h-info">
+                        <h4 class="humidity-count">64%</h4>
+                        <p>humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <div class="h-img">
+                        <img src="images/air.png" alt="" srcset="">
+                    </div>
+                    <div class="w-info">
+                        <h4 class="wind-count">64%</h4>
+                        <p>Wind</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const apikey = "2b2f5bbfd1ec1a6ceac01e0a82a26528";
+        const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        const searchBox = document.querySelector(".search-box .search input")
+        const searchBtn = document.querySelector(".search-box .search-icon button")
+        const weatherIcon = document.querySelector(".weather_img");
+
+        async function checkWeather(city) {
+            const response = await fetch(apiurl + city + `&appid=${apikey}`);
+
+            if (!response.ok) {
+                alert("City not found! Please try again.");
+                return;
+            }
+
+            var data = await response.json();
+            console.log(data);
+
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = data.main.temp + `°C`;
+            document.querySelector(".wind-count").innerHTML = data.wind.speed + ` Km/h`;
+            document.querySelector(".humidity-count").innerHTML = data.main.humidity + ` %`;
+
+            switch (data.weather[0].main) {
+                case "Clouds":
+                    weatherIcon.src = "images/cloudy.png";
+                    break;
+                case "Clear":
+                    weatherIcon.src = "images/sun.png";
+                    break;
+                case "Rain":
+                    weatherIcon.src = "images/storm.png";
+                    break;
+                case "Snow":
+                    weatherIcon.src = "images/snow.png";
+                    break;
+                default:
+                    weatherIcon.src = "images/Cloudy-1.png";
+            }
+
+            document.querySelector("#weather").style.display = "block";
+        }
+
+
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
+
+        })
+
+    </script>
+</body>
+
+</html>

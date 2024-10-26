@@ -4,13 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Demo Document</title>
+    <script src="Demo.js"></script>
 </head>
 
 <body>
+    <!-- <p id="demo3">this is the paragraph</p>
+    <p id="demo">this is the paragraph</p>
+    <p id="demo2"></p>
+    <button type="button" onclick="myfunction()">change name</button>
 
-    <script src="first.js">
-    </script>
+    <script>
+        let cow = "milk";
+        cow = "chees";
+        document.getElementById('demo2').innerHTML = cow;
+
+
+        const cars = ["abc", "ndj", "sdm"];
+        // let carslist = cars.length;
+        // cars[0] = "ds33";
+        // document.getElementById('demo').innerHTML = cars;
+        // let text = "<ul>";
+        // for (let i = 0; i < carslist; i++) {
+        //     text += "<li>" + cars[i]; + "</li>";
+        // }
+        // text += "</ul>";
+
+        let text = "<ul>";
+        cars.forEach(myfunction);
+        text += "</ul>";
+
+        function myfunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+
+        document.getElementById('demo3').innerHTML = text;
+
+        const person = { firstname: "ck", age: "20", location: "jetpur" };
+        document.getElementById('demo').innerHTML = person.firstname;
+    </script> -->
+
+    <!-- 
+    <section class="vowels-print">
+        <input type="text" name="value" id="line" placeholder="Enter random text">
+        <button type="submit" onclick="Vowels_check()">Check Vowels value</button>
+        <p class="vowels-list"></p>
+
+        <script>
+            function Vowels_check() {
+                let text = document.getElementById('line').value;
+
+                let Vowels = 0;
+                for (const char of text) {
+                    if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
+                        Vowels++;
+                    }
+                }
+                console.log(Vowels);
+            }
+        </script>
+    </section>
+
+    <section class="foreach-demo">
+        <script>
+            let arr = [2, 3, 4, 6];
+
+            arr.forEach((val) => {
+                console.log(val * val);
+            });
+        </script>
+    </section>
+
+    <section class="student-marks">
+        <script>
+            let marks = [89, 87, 90, 94, 95];
+
+            const highmark = marks.reduce((prev, curr) => {
+                return prev < curr ? prev : curr;
+            });
+
+            console.log(highmark);
+        </script>
+    </section> -->
+    <section class="demopclass">
+        <script>
+            // var a = 10;
+            // console.log(a);
+            // var a = 20;
+            // console.log(a);
+
+            const person = {
+                first_name: "Pankaj",
+                last_name: "Singh",
+                Age: 20,
+                About: "Web Developer and Competitive Programmer"
+            };
+
+            console.log(person);
+
+            // It is possible
+            first_name = "Aryan";
+            last_name = "Yadav";
+            Age = 22;
+            About = "Commerce undergraduate";
+
+            console.log(person);
+        </script>
+    </section>
 </body>
 
 </html>

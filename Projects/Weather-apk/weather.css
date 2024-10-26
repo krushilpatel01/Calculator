@@ -1,0 +1,142 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    height: auto;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(44, 179, 185, 1) 6%, rgba(9, 121, 9, 1) 35%, rgba(255, 213, 0, 1) 100%);
+    padding: 50px 20px;
+    align-items: center;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.card .search-box {
+    width: 100%;
+    display: flex;
+}
+
+.card .search {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.card .search input {
+    width: 96%;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 10px 0px;
+    text-indent: 20px;
+    border-radius: 20px;
+}
+
+.card .search-box .search-icon button {
+    width: 50px;
+    height: 50px;
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: white;
+    text-align: center;
+    line-height: 70px;
+}
+
+.card .search-box .search-icon img {
+    width: 50%;
+    height: 50%;
+}
+
+.waether-information {
+    width: 100%;
+    margin: 30px auto;
+}
+
+.waether-information .weather-img {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.waether-information .weather-img img {
+    width: 30%;
+    height: 30%;
+}
+
+.waether-information .weather-info {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    color: white;
+}
+
+.waether-information .weather-info {
+    width: 30%;
+    height: 30%;
+}
+
+.weatcher-cols {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weatcher-cols .humidity {
+    width: 48%;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+
+.humidity .h-img {
+    width: 20%;
+    margin-left: 40px;
+}
+
+.humidity img {
+    width: 100%;
+}
+
+.humidity .h-info {
+    margin-left: 10px;
+}
+
+.weatcher-cols .wind {
+    width: 48%;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+
+.wind .h-img {
+    width: 20%;
+    margin-left: 40px;
+}
+
+.wind img {
+    width: 100%;
+}
+
+.wind .w-info {
+    margin-left: 10px;
+}
+
+#weather {
+    display: none;
+}
+

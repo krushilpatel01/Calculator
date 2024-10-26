@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><span class="name">Gujrati =</span><span id="guj"></span></p>
+    <p><span class="name">English =</span><span id="eng"></span></p>
+    <p><span class="name">Hindi =</span><span id="hin"></span></p>
+    <p><span class="name">Science =</span><span id="sci"></span></p>
+
+    <p id="demo"></p>
+</body>
+<script>
+
+    let marks = {
+        gujrati: 60,
+        english: 70,
+        hindi: 80,
+        science: 79
+    }
+    let number = [32, 43, 53, 53, 23];
+    console.log(number);
+    console.log(number.length);
+
+    for (let i = 1; i <= number.length; i++) {
+        document.getElementById('demo').innerHTML = number;
+    }
+
+
+    document.getElementById('guj').innerHTML = marks.gujrati;
+    document.getElementById('eng').innerHTML = marks.english;
+    document.getElementById('hin').innerHTML = marks.hindi;
+    document.getElementById('sci').innerHTML = marks.science;
+
+    let company = ["blooberg", "microsoft", "uber", "google", "ibm", "netflix"];
+    console.log(company);
+    let first = company.shift();
+    console.log("first company remove is =", first);
+    company.splice(2, 1, "ola");
+    console.log(company);
+    company.push("amazon");
+    console.log(company);
+</script>
+
+</html>

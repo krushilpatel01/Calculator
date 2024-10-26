@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button type="button" onclick="demo-btn()">try it</button>
+
+
+    <script>
+        // indexof function used to find location of value starting and also used lastindex(function) both not found character then get -1
+        let text ="hello i am ck and i am designer packet";
+        let find = text.indexOf("ck");
+        let last =text.lastIndexOf("am");
+        console.log(find);
+        console.log(last);
+
+        // search function
+        let search = text.search("ck");
+        console.log(search);
+
+        let match =text.matchAll("ck");
+        console.log(match);
+    </script>
+</body>
+</html>

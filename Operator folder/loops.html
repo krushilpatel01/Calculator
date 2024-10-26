@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const name = "chabhadiya krushil";
+        // of used with array and string
+        for (const abs of name) {
+            console.log(abs);
+        }
+
+        // in used for object 
+        let student = {
+            name: "ck",
+            age: 20,
+            cgpa: 8,
+            ispass: true,
+        };
+        for (let key in student) {
+            console.log("key = " + key + ", detail = " + student[key]);
+        }
+
+        // let count =0;
+        // for (let i = 0; i <= 100; i++) {
+        //     if (i % 2 == 0) {
+        //         console.log(i);
+        //         count++;
+        //     }
+        // }
+        // console.log("total even numnber " + count);
+
+        let number = 24;
+        let usernumner = prompt("guess the game number");
+        console.log(usernumner);
+        while(number != usernumner){
+            usernumner = prompt("not match try again");
+        }
+        console.log("match number");
+    </script>
+
+</body>
+
+</html>
