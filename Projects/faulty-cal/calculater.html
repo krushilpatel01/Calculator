@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faulty Calculator</title>
+</head>
+
+<body>
+    <script>
+        const x = parseFloat(prompt("Enter a number (x):"));
+        const y = parseFloat(prompt("Enter another number (y):"));
+
+        console.log("x:", x);
+        console.log("y:", y);
+
+        let a = Math.floor(Math.random() * 10);
+        console.log("Random operation code:", a);
+
+        if (a == 1 || a == 2) {
+            console.log("Sum:", sum(x, y));
+        }
+        else if (a == 3 || a == 4) {
+            console.log("Difference:", sub(x, y));
+        }
+        else if (a == 5 || a == 6) {
+            console.log("Product:", mul(x, y));
+        }
+        else if (a == 7 || a == 8) {
+            console.log("Division:", div(x, y));
+        }
+        else if (a == 9 || a == 10) {
+            console.log("Exponentiation:", mod(x, y));
+        }
+
+        function sum(x, y) {
+            return x + y;
+        }
+        function sub(x, y) {
+            return x - y;
+        }
+        function mul(x, y) {
+            return x * y;
+        }
+        function div(x, y) {
+            if (y === 0) return "Cannot divide by zero";
+            return x / y;
+        }
+        function mod(x, y) {
+            return x ** y;
+        }
+    </script>
+</body>
+
+</html>
